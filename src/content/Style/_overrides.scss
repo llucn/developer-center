@@ -1,8 +1,10 @@
-@use '@carbon/react/scss/spacing' as *;
+.landing-page__r2 .cds--tabs--scrollable {
+  transform: translateZ(0);
+  justify-content: flex-end;
+}
 
-.main-page__r1 {
-  padding-top: $spacing-05;
-  padding-bottom: $spacing-05;
+.landing-page__r2 .cds--tab-content {
+  padding: 0;
 }
 
 .cds--tab--list {
