@@ -1,0 +1,16 @@
+@use '@carbon/react/scss/spacing' as *;
+
+.main-page__r1 {
+  padding-top: $spacing-05;
+  padding-bottom: $spacing-05;
+}
+
+.cds--tab--list {
+  justify-content: flex-end;
+  padding-right: 1rem;
+}
+
+.cds--subgrid--wide {
+  //fix needed to keep the subgrid from scrolling horizontally
+  margin-right: 1rem;
+}
