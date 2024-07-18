@@ -1,0 +1,177 @@
+{
+    "builder": {
+        "workorder": {
+            "title": "Workorder Fields",
+            "weight": 0,
+            "default": true,
+            "components": {
+                "wonum": {
+                    "title": "WoNum",
+                    "key": "wonum",
+                    "icon": "terminal",
+                    "schema": {
+                        "label": "WoNum",
+                        "type": "textfield",
+                        "key": "wonum",
+                        "input": true,
+                        "disabled": false
+                    }
+                },
+                "description": {
+                    "title": "Description",
+                    "key": "description",
+                    "icon": "terminal",
+                    "schema": {
+                        "label": "Description",
+                        "type": "textfield",
+                        "key": "description",
+                        "input": true
+                    }
+                },
+                "status": {
+                    "title": "Status",
+                    "key": "status",
+                    "icon": "code",
+                    "schema": {
+                        "label": "Status",
+                        "widget": "choicesjs",
+                        "tableView": true,
+                        "data": {
+                            "values": [
+                                {
+                                    "label": "New",
+                                    "value": "New"
+                                },
+                                {
+                                    "label": "WAPPR",
+                                    "value": "WAPPR"
+                                },
+                                {
+                                    "label": "APPR",
+                                    "value": "APPR"
+                                },
+                                {
+                                    "label": "SENTTOVENDOR",
+                                    "value": "SENTTOVENDOR"
+                                },
+                                {
+                                    "label": "VENDORCONFIRMED",
+                                    "value": "VENDORCONFIRMED"
+                                },
+                                {
+                                    "label": "READYFORVENDOR",
+                                    "value": "READYFORVENDOR"
+                                },
+                                {
+                                    "label": "COMP",
+                                    "value": "COMP"
+                                }
+                            ]
+                        },
+                        "key": "status",
+                        "type": "select",
+                        "input": true,
+                        "defaultValue": "New"
+                    }
+                },
+                "location": {
+                    "title": "Location",
+                    "key": "location",
+                    "icon": "code",
+                    "schema": {
+                        "label": "Location",
+                        "widget": "choicesjs",
+                        "tableView": true,
+                        "dataSrc": "url",
+                        "data": {
+                            "url": "http://localhost:3000/location",
+                            "values": [
+                                {
+                                    "label": "locationid",
+                                    "value": "location"
+                                }
+                            ]
+                        },
+                        "idPath": "locationid",
+                        "valueProperty": "location",
+                        "template": "<span>{{ item.location }}</span>",
+                        "key": "location",
+                        "type": "select",
+                        "disableLimit": false,
+                        "input": true
+                    }
+                },
+                "asset": {
+                    "title": "Asset",
+                    "key": "asset",
+                    "icon": "code",
+                    "schema": {
+                        "label": "Asset",
+                        "widget": "choicesjs",
+                        "tableView": true,
+                        "dataSrc": "url",
+                        "data": {
+                            "url": "http://localhost:3000/asset",
+                            "values": [
+                                {
+                                    "label": "assetid",
+                                    "value": "assetnum"
+                                }
+                            ]
+                        },
+                        "idPath": "assetid",
+                        "valueProperty": "assetnum",
+                        "template": "<span>{{ item.assetnum }}</span>",
+                        "key": "asset",
+                        "type": "select",
+                        "input": true
+                    }
+                },
+                "active": {
+                    "title": "Active",
+                    "key": "active",
+                    "icon": "code",
+                    "schema": {
+                        "label": "Active",
+                        "widget": "choicesjs",
+                        "tableView": true,
+                        "data": {
+                            "values": [
+                                {
+                                    "label": "active",
+                                    "value": "1"
+                                },
+                                {
+                                    "label": "inactive",
+                                    "value": "0"
+                                }
+                            ]
+                        },
+                        "key": "active",
+                        "type": "select",
+                        "input": true,
+                        "defaultValue": "1"
+                    }
+                }
+            }
+        },
+        "basic": {
+            "title": "Basic",
+            "weight": 100,
+            "default": false
+        },
+        "advanced": {
+            "title": "Advanced",
+            "weight": 110
+        },
+        "layout": {
+            "title": "Layout",
+            "weight": 120
+        },
+        "data": {
+            "title": "Data",
+            "weight": 130
+        },
+        "premium": false
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "components": [
+        {
+            "type": "textfield",
+            "key": "workorderid",
+            "label": "Workorder Id",
+            "disabled": true
+        },
+        {
+            "type": "textfield",
+            "key": "wonum",
+            "label": "Workorder Number"
+        },
+        {
+            "type": "textfield",
+            "key": "description",
+            "label": "Workorder Description"
+        },
+        {
+            "type": "button",
+            "key": "submit",
+            "label": "Submit"
+        }
+    ]
+}

@@ -33,6 +33,12 @@ const ApplicationHeader = () => (
           <HeaderMenuItem as={Link} to="/">
             Home
           </HeaderMenuItem>
+          <HeaderMenuItem as={Link} to="/carbon">
+            Carbon
+          </HeaderMenuItem>
+          <HeaderMenuItem as={Link} to="/workorder_detail">
+            Workorder Detail
+          </HeaderMenuItem>
         </HeaderNavigation>
         <SideNav
           aria-label="Side navigation"
@@ -40,8 +46,14 @@ const ApplicationHeader = () => (
           isPersistent={false}>
           <SideNavItems>
             <HeaderSideNavItems>
+              <HeaderMenuItem as={Link} to="/">
+                Home
+              </HeaderMenuItem>
               <HeaderMenuItem as={Link} to="/carbon">
                 Carbon
+              </HeaderMenuItem>
+              <HeaderMenuItem as={Link} to="/workorder_detail">
+                Workorder Detail
               </HeaderMenuItem>
             </HeaderSideNavItems>
           </SideNavItems>
