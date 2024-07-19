@@ -126,32 +126,6 @@
                         "type": "select",
                         "input": true
                     }
-                },
-                "active": {
-                    "title": "Active",
-                    "key": "active",
-                    "icon": "code",
-                    "schema": {
-                        "label": "Active",
-                        "widget": "choicesjs",
-                        "tableView": true,
-                        "data": {
-                            "values": [
-                                {
-                                    "label": "active",
-                                    "value": "1"
-                                },
-                                {
-                                    "label": "inactive",
-                                    "value": "0"
-                                }
-                            ]
-                        },
-                        "key": "active",
-                        "type": "select",
-                        "input": true,
-                        "defaultValue": "1"
-                    }
                 }
             }
         },

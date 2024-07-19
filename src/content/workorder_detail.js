@@ -9,11 +9,9 @@ const WorkorderDetail = () => {
     require('./workorder_detail_form.json')
   );
 
-  const [jsonBuilder, setBuilder] = useState(
-    require('./workorder_detail_builder.json')
+  const [jsonOptions, setOptions] = useState(
+    require('./workorder_detail_options.json')
   );
-
-  // const [jsonSchema, setSchema] = useState({ components: [] });
 
   const onFormChange = schema => {
     setSchema({ ...schema, components: [...schema.components] });
@@ -21,7 +19,11 @@ const WorkorderDetail = () => {
 
   return (
     <>
-      <FormBuilder form={jsonSchema} onChange={onFormChange} />
+      <FormBuilder
+        form={jsonSchema}
+        options={jsonOptions}
+        onChange={onFormChange}
+      />
 
       {/* <Card title="Form JSON Schema" className="my-4">
         <Card.Body>

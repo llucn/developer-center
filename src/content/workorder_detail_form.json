@@ -9,12 +9,12 @@
         {
             "type": "textfield",
             "key": "wonum",
-            "label": "Workorder Number"
+            "label": "WoNum"
         },
         {
             "type": "textfield",
             "key": "description",
-            "label": "Workorder Description"
+            "label": "Description"
         },
         {
             "type": "button",
