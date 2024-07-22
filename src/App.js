@@ -5,7 +5,7 @@ import ApplicationHeader from './components/ApplicationHeader';
 import { Route, Switch, HashRouter as Router } from 'react-router-dom';
 import CarbonSample from './content/CarbonSample';
 import ApplicationCards from './content/ApplicationCards';
-import WorkorderDetail from './content/workorder_detail';
+import FormDesigner from './content/FormDesigner';
 
 class App extends Component {
   render() {
@@ -18,7 +18,16 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={ApplicationCards} />
             <Route exact path="/carbon" component={CarbonSample} />
-            <Route exact path="/workorder_detail" component={WorkorderDetail} />
+            <Route
+              exact
+              path="/formdesigner/workorder_list"
+              render={() => <FormDesigner form={'workorder_list'} />}
+            />
+            <Route
+              exact
+              path="/formdesigner/workorder_detail"
+              render={() => <FormDesigner form={'workorder_detail'} />}
+            />
           </Switch>
         </Content>
       </Router>

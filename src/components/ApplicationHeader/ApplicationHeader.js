@@ -36,7 +36,10 @@ const ApplicationHeader = () => (
           <HeaderMenuItem as={Link} to="/carbon">
             Carbon
           </HeaderMenuItem>
-          <HeaderMenuItem as={Link} to="/workorder_detail">
+          <HeaderMenuItem as={Link} to="/formdesigner/workorder_list">
+            Workorder List
+          </HeaderMenuItem>
+          <HeaderMenuItem as={Link} to="/formdesigner/workorder_detail">
             Workorder Detail
           </HeaderMenuItem>
         </HeaderNavigation>
@@ -52,7 +55,10 @@ const ApplicationHeader = () => (
               <HeaderMenuItem as={Link} to="/carbon">
                 Carbon
               </HeaderMenuItem>
-              <HeaderMenuItem as={Link} to="/workorder_detail">
+              <HeaderMenuItem as={Link} to="/formdesigner/workorder_list">
+                Workorder List
+              </HeaderMenuItem>
+              <HeaderMenuItem as={Link} to="/formdesigner/workorder_detail">
                 Workorder Detail
               </HeaderMenuItem>
             </HeaderSideNavItems>

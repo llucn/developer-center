@@ -84,21 +84,27 @@
                         "tableView": true,
                         "dataSrc": "url",
                         "data": {
-                            "url": "http://localhost:3000/location",
+                            "url": "https://gtmdemo.manage.masdemosust1tz0702.gtm-pat.com/maximo/api/os/mxapilocations?apikey=ru1g10c9tvn0n737pk36atmcqmialo7ceap1ts5o&lean=1&oslc.pageSize=10&oslc.select=locationsid%2Clocation%2Cdescription&oslc.where=siteid%3D%22BEDFORD%22",
                             "values": [
                                 {
                                     "label": "locationid",
                                     "value": "location"
                                 }
+                            ],
+                            "headers": [
+                                {
+                                    "key": "Access-Control-Allow-Origin",
+                                    "value": "*"
+                                }
                             ]
                         },
-                        "idPath": "locationid",
                         "valueProperty": "location",
                         "template": "<span>{{ item.location }}</span>",
                         "key": "location",
                         "type": "select",
                         "disableLimit": false,
-                        "input": true
+                        "input": true,
+                        "selectValues": "member"
                     }
                 },
                 "asset": {
@@ -111,7 +117,7 @@
                         "tableView": true,
                         "dataSrc": "url",
                         "data": {
-                            "url": "http://localhost:3000/asset",
+                            "url": "http://124.222.21.115:8080/asset",
                             "values": [
                                 {
                                     "label": "assetid",
@@ -124,7 +130,28 @@
                         "template": "<span>{{ item.assetnum }}</span>",
                         "key": "asset",
                         "type": "select",
-                        "input": true
+                        "input": true,
+                        "selectValues": "member"
+                    }
+                },
+                "test": {
+                    "title": "test",
+                    "key": "test",
+                    "icon": "code",
+                    "schema": {
+                    "type": "select",
+                    "label":"Model",
+                    "key": "model",
+                    "placeholder": "Select your model",
+                    "dataSrc": "url",
+                    "defaultValue": "Pilot",
+                    "lazyLoad": false,
+                    "data": {
+                      "url": "https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformake/honda?format=json"
+                    },
+                    "valueProperty": "Model_Name",
+                    "template": "<span>{{ item.Model_Name }}</span>",
+                    "selectValues": "Results"
                     }
                 }
             }

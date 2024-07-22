@@ -1,6 +1,15 @@
 {
     "components": [
         {
+            "label": "HTML",
+            "content": "<h2>Workorder Detail</h2>",
+            "refreshOnChange": false,
+            "key": "html",
+            "type": "htmlelement",
+            "input": false,
+            "tableView": false
+        },
+        {
             "type": "textfield",
             "key": "workorderid",
             "label": "Workorder Id",
