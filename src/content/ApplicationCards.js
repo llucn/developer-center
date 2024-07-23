@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Search } from '@carbon/icons-react';
-import { Grid, Column, Link, Tile } from '@carbon/react';
+import {
+  Grid,
+  Column,
+  Link,
+  Tile,
+  UnorderedList,
+  ListItem,
+} from '@carbon/react';
 
 const ApplicationCards = () => {
   return (
@@ -9,9 +16,12 @@ const ApplicationCards = () => {
         <Column lg={3} md={2} sm={1} className="card-page__r1">
           <Tile style={{ height: '200px', width: '200px' }}>
             <b>Delta Work Force for MAS</b>
-            <br />
-            <br />
-            <br />
+            <UnorderedList>
+              <ListItem>Work Order</ListItem>
+              <ListItem>Asset</ListItem>
+              <ListItem>Inventory</ListItem>
+              <ListItem>...</ListItem>
+            </UnorderedList>
             <Link
               style={{ marginLeft: '12px' }}
               href="/#/formdesigner/workorder_list">
@@ -22,9 +32,12 @@ const ApplicationCards = () => {
         <Column lg={3} md={2} sm={1} className="card-page__r1">
           <Tile style={{ height: '200px', width: '200px' }}>
             <b>Delta Work Force For Tririga</b>
-            <br />
-            <br />
-            <br />
+            <UnorderedList>
+              <ListItem>...</ListItem>
+              <ListItem>...</ListItem>
+              <ListItem>...</ListItem>
+              <ListItem>...</ListItem>
+            </UnorderedList>
             <Link
               style={{ marginLeft: '12px' }}
               href="/#/formdesigner/workorder_list">
@@ -35,9 +48,12 @@ const ApplicationCards = () => {
         <Column lg={3} md={2} sm={1} className="card-page__r1">
           <Tile style={{ height: '200px', width: '200px' }}>
             <b>Delta Work Force For SAP</b>
-            <br />
-            <br />
-            <br />
+            <UnorderedList>
+              <ListItem>...</ListItem>
+              <ListItem>...</ListItem>
+              <ListItem>...</ListItem>
+              <ListItem>...</ListItem>
+            </UnorderedList>
             <Link
               style={{ marginLeft: '12px' }}
               href="/#/formdesigner/workorder_list">

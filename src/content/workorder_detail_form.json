@@ -28,7 +28,18 @@
         {
             "type": "button",
             "key": "submit",
-            "label": "Submit"
+            "label": "Submit",
+            "action": "url",
+            "url": "http://localhost:8080/formio/saveform",
+            "headers": [
+                {
+                    "header": "content-type",
+                    "value": "application/json"
+                }
+            ],
+            "disableOnInvalid": false,
+            "tableView": false,
+            "input": true
         }
     ]
 }

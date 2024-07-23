@@ -22,6 +22,24 @@ const FormDesigner = props => {
     setSchema({ ...schema, components: [...schema.components] });
   };
 
+  const saveForm = () => {
+    console.log(jsonSchema);
+    fetch('http://localhost:8080/formio/saveform', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(jsonSchema),
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  };
+
   return (
     <>
       <Card className="my-4">
@@ -33,7 +51,7 @@ const FormDesigner = props => {
           />
         </Card.Body>
       </Card>
-      <Button kind="primary" onClick={() => console.log(jsonSchema)}>
+      <Button kind="primary" onClick={saveForm}>
         <Save size="16" />
         Save
       </Button>
@@ -47,7 +65,16 @@ const FormDesigner = props => {
       <Card className="my-4">
         <Card.Body>
           <Card.Title className="text-center">As Rendered Form</Card.Title>
-          <Form form={jsonSchema} />
+          <Form
+            form={jsonSchema}
+            submission={{
+              data: {
+                workorderid: '150867',
+                wonum: 'MYWO1',
+                description: 'my workorder 123',
+              },
+            }}
+          />
         </Card.Body>
       </Card>
     </>
