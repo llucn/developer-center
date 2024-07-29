@@ -14,7 +14,7 @@ const ApplicationCards = () => {
     <div>
       <Grid className="card-page">
         <Column lg={3} md={2} sm={1} className="card-page__r1">
-          <Tile style={{ height: '200px', width: '200px' }}>
+          <Tile style={{ height: '240px', width: '240px' }}>
             <b>Delta Work Force for MAS</b>
             <UnorderedList>
               <ListItem>Work Order</ListItem>
@@ -22,15 +22,13 @@ const ApplicationCards = () => {
               <ListItem>Inventory</ListItem>
               <ListItem>...</ListItem>
             </UnorderedList>
-            <Link
-              style={{ marginLeft: '12px' }}
-              href="/#/formdesigner/workorder_list">
+            <Link style={{ marginLeft: '12px' }} href="/#/carbon">
               Edit
             </Link>
           </Tile>
         </Column>
         <Column lg={3} md={2} sm={1} className="card-page__r1">
-          <Tile style={{ height: '200px', width: '200px' }}>
+          <Tile style={{ height: '240px', width: '240px' }}>
             <b>Delta Work Force For Tririga</b>
             <UnorderedList>
               <ListItem>...</ListItem>
@@ -38,15 +36,13 @@ const ApplicationCards = () => {
               <ListItem>...</ListItem>
               <ListItem>...</ListItem>
             </UnorderedList>
-            <Link
-              style={{ marginLeft: '12px' }}
-              href="/#/formdesigner/workorder_list">
+            <Link style={{ marginLeft: '12px' }} href="/#/carbon">
               Edit
             </Link>
           </Tile>
         </Column>
         <Column lg={3} md={2} sm={1} className="card-page__r1">
-          <Tile style={{ height: '200px', width: '200px' }}>
+          <Tile style={{ height: '240px', width: '240px' }}>
             <b>Delta Work Force For SAP</b>
             <UnorderedList>
               <ListItem>...</ListItem>
@@ -54,15 +50,13 @@ const ApplicationCards = () => {
               <ListItem>...</ListItem>
               <ListItem>...</ListItem>
             </UnorderedList>
-            <Link
-              style={{ marginLeft: '12px' }}
-              href="/#/formdesigner/workorder_list">
+            <Link style={{ marginLeft: '12px' }} href="/#/carbon">
               Edit
             </Link>
           </Tile>
         </Column>
         <Column lg={3} md={2} sm={1} className="card-page__r1">
-          <Tile style={{ height: '200px', width: '200px' }}>
+          <Tile style={{ height: '240px', width: '240px' }}>
             <div
               style={{
                 width: '100%',

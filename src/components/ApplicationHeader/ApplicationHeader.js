@@ -33,7 +33,7 @@ const ApplicationHeader = () => (
           <HeaderMenuItem as={Link} to="/">
             Home
           </HeaderMenuItem>
-          <HeaderMenuItem as={Link} to="/carbon">
+          {/* <HeaderMenuItem as={Link} to="/carbon">
             Carbon
           </HeaderMenuItem>
           <HeaderMenuItem as={Link} to="/formdesigner/workorder_list">
@@ -41,7 +41,7 @@ const ApplicationHeader = () => (
           </HeaderMenuItem>
           <HeaderMenuItem as={Link} to="/formdesigner/workorder_detail">
             Workorder Detail
-          </HeaderMenuItem>
+          </HeaderMenuItem> */}
         </HeaderNavigation>
         <SideNav
           aria-label="Side navigation"
@@ -52,7 +52,7 @@ const ApplicationHeader = () => (
               <HeaderMenuItem as={Link} to="/">
                 Home
               </HeaderMenuItem>
-              <HeaderMenuItem as={Link} to="/carbon">
+              {/* <HeaderMenuItem as={Link} to="/carbon">
                 Carbon
               </HeaderMenuItem>
               <HeaderMenuItem as={Link} to="/formdesigner/workorder_list">
@@ -60,7 +60,7 @@ const ApplicationHeader = () => (
               </HeaderMenuItem>
               <HeaderMenuItem as={Link} to="/formdesigner/workorder_detail">
                 Workorder Detail
-              </HeaderMenuItem>
+              </HeaderMenuItem> */}
             </HeaderSideNavItems>
           </SideNavItems>
         </SideNav>
