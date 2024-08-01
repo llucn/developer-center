@@ -18,7 +18,7 @@
     "test": "react-scripts test"
   },
   "dependencies": {
-    "@carbon/react": "1.32.0",
+    "@carbon/react": "^1.62.0",
     "@formio/js": "^5.0.0-rc.48",
     "@formio/react": "^5.3.0-rc.3",
     "@microlink/react-json-view": "^1.23.1",

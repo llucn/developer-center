@@ -22,7 +22,7 @@ const ApplicationCards = () => {
               <ListItem>Inventory</ListItem>
               <ListItem>...</ListItem>
             </UnorderedList>
-            <Link style={{ marginLeft: '12px' }} href="/#/carbon">
+            <Link style={{ marginLeft: '12px' }} href="/#/appdesigner">
               Edit
             </Link>
           </Tile>
@@ -36,7 +36,7 @@ const ApplicationCards = () => {
               <ListItem>...</ListItem>
               <ListItem>...</ListItem>
             </UnorderedList>
-            <Link style={{ marginLeft: '12px' }} href="/#/carbon">
+            <Link style={{ marginLeft: '12px' }} href="/#/appdesigner">
               Edit
             </Link>
           </Tile>
@@ -50,7 +50,7 @@ const ApplicationCards = () => {
               <ListItem>...</ListItem>
               <ListItem>...</ListItem>
             </UnorderedList>
-            <Link style={{ marginLeft: '12px' }} href="/#/carbon">
+            <Link style={{ marginLeft: '12px' }} href="/#/appdesigner">
               Edit
             </Link>
           </Tile>
