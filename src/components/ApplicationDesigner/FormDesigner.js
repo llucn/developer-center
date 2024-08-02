@@ -10,6 +10,13 @@ import './Style/formio.scss';
 const FormDesigner = props => {
   console.log('props.form: ', props.form);
 
+  // for demo only, we are using hardcoded json files
+  const jsonMap = {
+    startcenter: 'startCenter.json',
+    workorder_list: 'workOrder.json',
+    workorder_detail: 'workOrderDetail.json',
+  };
+
   const [jsonSchema, setSchema] = useState(
     require('./' + props.form + '_form.json')
   );
@@ -33,7 +40,10 @@ const FormDesigner = props => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(jsonSchema),
+      body: JSON.stringify({
+        formname: jsonMap[props.form],
+        formjson: jsonSchema,
+      }),
     })
       .then(response => response.json())
       .then(data => {

@@ -13,6 +13,7 @@ const ApplicationDesigner = () => {
     <div>
       <TabsVertical style={{ height: '100%' }}>
         <TabListVertical aria-label="List of tabs">
+          <Tab>Start Center</Tab>
           <Tab>Workorder List</Tab>
           <Tab>Workorder Detail</Tab>
           <Tab>Workorder ...</Tab>
@@ -22,6 +23,9 @@ const ApplicationDesigner = () => {
           <Tab>Workorder ...</Tab>
         </TabListVertical>
         <TabPanels>
+          <TabPanel>
+            <FormDesigner form={'startcenter'} />
+          </TabPanel>
           <TabPanel>
             <FormDesigner form={'workorder_list'} />
           </TabPanel>
