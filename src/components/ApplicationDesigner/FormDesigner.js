@@ -18,6 +18,10 @@ const FormDesigner = props => {
     require('./' + props.form + '_options.json')
   );
 
+  const [jsonSubmission, setSubmission] = useState(
+    require('./' + props.form + '_submission.json')
+  );
+
   const onFormChange = schema => {
     setSchema({ ...schema, components: [...schema.components] });
   };
@@ -56,25 +60,17 @@ const FormDesigner = props => {
         Save
       </Button>
 
-      <Card title="Form JSON Schema" className="my-4">
+      {/* <Card title="Form JSON Schema" className="my-4">
         <Card.Body>
           <Card.Title className="text-center">As JSON Schema</Card.Title>
           <ReactJson src={jsonSchema} name={null} collapsed={true} />
         </Card.Body>
-      </Card>
+      </Card> */}
+
       <Card className="my-4">
         <Card.Body>
-          <Card.Title className="text-center">As Rendered Form</Card.Title>
-          <Form
-            form={jsonSchema}
-            submission={{
-              data: {
-                workorderid: '150867',
-                wonum: 'MYWO1',
-                description: 'my workorder 123',
-              },
-            }}
-          />
+          <Card.Title className="text-center">Preview</Card.Title>
+          <Form form={jsonSchema} submission={jsonSubmission} />
         </Card.Body>
       </Card>
     </>

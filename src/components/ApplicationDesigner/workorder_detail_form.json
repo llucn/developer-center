@@ -2,12 +2,10 @@
     "components": [
         {
             "label": "HTML",
-            "content": "<h2>Workorder Detail</h2>",
-            "refreshOnChange": false,
+            "tag": "h3",
+            "content": "Workorder Detail",
             "key": "html",
-            "type": "htmlelement",
-            "input": false,
-            "tableView": false
+            "type": "htmlelement"
         },
         {
             "type": "textfield",
