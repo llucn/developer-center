@@ -28,7 +28,7 @@
             "key": "submit",
             "label": "Submit",
             "action": "url",
-            "url": "http://localhost:8080/formio/saveform",
+            "url": "http://localhost:3001/workorder/saveform",
             "headers": [
                 {
                     "header": "content-type",

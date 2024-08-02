@@ -28,7 +28,7 @@ const FormDesigner = props => {
 
   const saveForm = () => {
     console.log(jsonSchema);
-    fetch('http://localhost:8080/formio/saveform', {
+    fetch('http://localhost:3001/formdesign/saveform', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ const FormDesigner = props => {
       </Card>
       <Button kind="primary" onClick={saveForm}>
         <Save size="16" />
-        Save
+        Save Form
       </Button>
 
       {/* <Card title="Form JSON Schema" className="my-4">
