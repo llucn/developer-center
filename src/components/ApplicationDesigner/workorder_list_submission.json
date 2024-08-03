@@ -4,18 +4,18 @@
             {
                 "workorderid": "1",
                 "wonum": "11",
-                "description": "111",
-                "longdescription": "1111",
+                "description": "This is description",
+                "longdescription": "This is long description",
                 "priority": "high",
-                "status": "APP"
+                "status": "APPR"
             },
             {
                 "workorderid": "2",
                 "wonum": "22",
-                "description": "222",
-                "longdescription": "2222",
+                "description": "This is description",
+                "longdescription": "This is long description",
                 "priority": "high",
-                "status": "APP"
+                "status": "APPR"
             }
         ]
     }
