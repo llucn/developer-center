@@ -109,7 +109,7 @@
                 },
                 "asset": {
                     "title": "Asset",
-                    "key": "asset",
+                    "key": "assetnum",
                     "icon": "code",
                     "schema": {
                         "label": "Asset",
@@ -128,7 +128,7 @@
                         "idPath": "assetid",
                         "valueProperty": "assetnum",
                         "template": "<span>{{ item.assetnum }}</span>",
-                        "key": "asset",
+                        "key": "assetnum",
                         "type": "select",
                         "input": true,
                         "selectValues": "member"
