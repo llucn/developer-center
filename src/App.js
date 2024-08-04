@@ -5,7 +5,9 @@ import ApplicationHeader from './components/ApplicationHeader';
 import { Route, Switch, HashRouter as Router } from 'react-router-dom';
 import CarbonSample from './content/CarbonSample';
 import ApplicationCards from './content/ApplicationCards';
+import ApplicationCreator from './components/ApplicationDesigner/ApplicationCreator';
 import ApplicationDesigner from './components/ApplicationDesigner/ApplicationDesigner';
+import PageDesigner from './components/ApplicationDesigner/PageDesigner';
 
 class App extends Component {
   render() {
@@ -14,13 +16,21 @@ class App extends Component {
         <Theme theme="g100">
           <ApplicationHeader />
         </Theme>
-        <Content>
-          <Switch>
-            <Route exact path="/" component={ApplicationCards} />
-            <Route exact path="/carbon" component={CarbonSample} />
-            <Route exact path="/appdesigner" component={ApplicationDesigner} />
-          </Switch>
-        </Content>
+        <Theme theme="g30">
+          <Content>
+            <Switch>
+              <Route exact path="/" component={ApplicationCards} />
+              <Route exact path="/carbon" component={CarbonSample} />
+              <Route exact path="/appcreator" component={ApplicationCreator} />
+              <Route
+                exact
+                path="/appdesigner"
+                component={ApplicationDesigner}
+              />
+              <Route exact path="/pagedesigner" component={PageDesigner} />
+            </Switch>
+          </Content>
+        </Theme>
       </Router>
     );
   }

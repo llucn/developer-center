@@ -65,7 +65,9 @@ const ApplicationCards = () => {
                 justifyContent: 'center',
                 alignItems: 'center',
               }}>
-              <Link style={{ fontSize: 48 }}>+</Link>
+              <Link style={{ fontSize: 48 }} href="/#/appcreator">
+                +
+              </Link>
             </div>
           </Tile>
         </Column>

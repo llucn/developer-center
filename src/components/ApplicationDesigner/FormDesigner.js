@@ -55,7 +55,7 @@ const FormDesigner = props => {
   };
 
   return (
-    <>
+    <div>
       <Card className="my-4">
         <Card.Body>
           <FormBuilder
@@ -79,11 +79,13 @@ const FormDesigner = props => {
 
       <Card className="my-4">
         <Card.Body>
-          <Card.Title className="text-center">Preview</Card.Title>
+          <Card.Title className="text-center">
+            <h3>Preview</h3>
+          </Card.Title>
           <Form form={jsonSchema} submission={jsonSubmission} />
         </Card.Body>
       </Card>
-    </>
+    </div>
   );
 };
 
