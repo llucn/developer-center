@@ -1,7 +1,6 @@
 import { Form, FormBuilder } from '@formio/react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Card } from 'react-bootstrap';
-import ReactJson from '@microlink/react-json-view';
 import { Button } from '@carbon/react';
 import { Save } from '@carbon/icons-react';
 
@@ -13,21 +12,39 @@ const FormDesigner = props => {
   // for demo only, we are using hardcoded json files
   const jsonMap = {
     startcenter: 'startCenter.json',
-    workorder_list: 'workOrder.json',
+    workorder_list: 'workOrders.json',
     workorder_detail: 'workOrderDetail.json',
   };
 
-  const [jsonSchema, setSchema] = useState(
-    require('./' + props.form + '_form.json')
-  );
+  const [jsonSchema, setSchema] = useState();
 
-  const [jsonOptions, setOptions] = useState(
-    require('./' + props.form + '_options.json')
-  );
+  const [jsonOptions, setOptions] = useState();
 
-  const [jsonSubmission, setSubmission] = useState(
-    require('./' + props.form + '_submission.json')
-  );
+  const [jsonSubmission, setSubmission] = useState();
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchFormConfig = async () => {
+      const baseUrl = 'http://localhost:3001/formdesign/formconfig';
+
+      const schemaResponse = await fetch(baseUrl + '/' + jsonMap[props.form]);
+      const schemaJson = await schemaResponse.json();
+      setSchema(schemaJson);
+
+      // const optionsResponse = await fetch(baseUrl + '/' + jsonMap[props.form]);
+      // const optionsJson = await optionsResponse.json();
+      // setSchema(optionsJson);
+
+      // const submissionResponse = await fetch(baseUrl + '/' + jsonMap[props.form]);
+      // const submissionJson = await submissionResponse.json();
+      // setSchema(submissionJson);
+
+      setIsLoading(false);
+    };
+
+    fetchFormConfig();
+  }, []);
 
   const onFormChange = schema => {
     setSchema({ ...schema, components: [...schema.components] });
@@ -56,35 +73,35 @@ const FormDesigner = props => {
 
   return (
     <div>
-      <Card className="my-4">
-        <Card.Body>
-          <FormBuilder
-            form={jsonSchema}
-            options={jsonOptions}
-            onChange={onFormChange}
-          />
-        </Card.Body>
-      </Card>
-      <Button kind="primary" onClick={saveForm}>
-        <Save size="16" />
-        Save Form
-      </Button>
+      {isLoading ? (
+        <div>Loading...</div>
+      ) : (
+        <div>
+          <Card className="my-4">
+            <Card.Body>
+              <FormBuilder
+                form={jsonSchema}
+                options={jsonOptions}
+                onChange={onFormChange}
+              />
+            </Card.Body>
+          </Card>
 
-      {/* <Card title="Form JSON Schema" className="my-4">
-        <Card.Body>
-          <Card.Title className="text-center">As JSON Schema</Card.Title>
-          <ReactJson src={jsonSchema} name={null} collapsed={true} />
-        </Card.Body>
-      </Card> */}
+          <Button kind="primary" onClick={saveForm}>
+            <Save size="16" />
+            Save Form
+          </Button>
 
-      <Card className="my-4">
-        <Card.Body>
-          <Card.Title className="text-center">
-            <h3>Preview</h3>
-          </Card.Title>
-          <Form form={jsonSchema} submission={jsonSubmission} />
-        </Card.Body>
-      </Card>
+          <Card className="my-4">
+            <Card.Body>
+              <Card.Title className="text-center">
+                <h3>Preview</h3>
+              </Card.Title>
+              <Form form={jsonSchema} submission={jsonSubmission} />
+            </Card.Body>
+          </Card>
+        </div>
+      )}
     </div>
   );
 };

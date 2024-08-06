@@ -16,21 +16,15 @@ class App extends Component {
         <Theme theme="g100">
           <ApplicationHeader />
         </Theme>
-        <Theme theme="g30">
-          <Content>
-            <Switch>
-              <Route exact path="/" component={ApplicationCards} />
-              <Route exact path="/carbon" component={CarbonSample} />
-              <Route exact path="/appcreator" component={ApplicationCreator} />
-              <Route
-                exact
-                path="/appdesigner"
-                component={ApplicationDesigner}
-              />
-              <Route exact path="/pagedesigner" component={PageDesigner} />
-            </Switch>
-          </Content>
-        </Theme>
+        <Content>
+          <Switch>
+            <Route exact path="/" component={ApplicationCards} />
+            <Route exact path="/carbon" component={CarbonSample} />
+            <Route exact path="/appcreator" component={ApplicationCreator} />
+            <Route exact path="/appdesigner" component={ApplicationDesigner} />
+            <Route exact path="/pagedesigner" component={PageDesigner} />
+          </Switch>
+        </Content>
       </Router>
     );
   }
