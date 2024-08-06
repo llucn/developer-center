@@ -32,13 +32,17 @@ const FormDesigner = props => {
       const schemaJson = await schemaResponse.json();
       setSchema(schemaJson);
 
-      // const optionsResponse = await fetch(baseUrl + '/' + jsonMap[props.form]);
-      // const optionsJson = await optionsResponse.json();
-      // setSchema(optionsJson);
+      // const schemaResponse = await fetch(baseUrl + '/' + props.form + '_form.json');
+      // const schemaJson = await schemaResponse.json();
+      // setSchema(schemaJson);
 
-      // const submissionResponse = await fetch(baseUrl + '/' + jsonMap[props.form]);
+      // const optionsResponse = await fetch(baseUrl + '/' + props.form + '_options.json');
+      // const optionsJson = await optionsResponse.json();
+      // setOptions(optionsJson);
+
+      // const submissionResponse = await fetch(baseUrl + '/' + props.form + '_submission.json');
       // const submissionJson = await submissionResponse.json();
-      // setSchema(submissionJson);
+      // setSubmission(submissionJson);
 
       setIsLoading(false);
     };
