@@ -1,14 +1,40 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Form, Stack, TextInput, Button } from '@carbon/react';
+import { useHistory } from 'react-router-dom';
 
 const ApplicationCreator = () => {
-  const { appname, setAppname } = useState('');
+  const [appname, setAppname] = useState('');
+
+  const history = useHistory();
+  const navigateTo = () => history.push('/');
 
   const handleCreateApplication = () => {
-    // TODO: Implement create application logic
-    console.log();
+    fetch('http://localhost:3001/application/createapp', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        appname: appname,
+      }),
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+
+    navigateTo();
+
+    return false;
   };
+
+  const onChange = e => {
+    setAppname(e.target.value);
+  };
+
   return (
     <div
       style={{
@@ -17,19 +43,17 @@ const ApplicationCreator = () => {
         width: '50%',
         padding: '10px',
       }}>
-      <Form labelText="Create Application">
+      <Form labelText="Create Application" onSubmit={handleCreateApplication}>
         <Stack gap={6}>
           <TextInput
             id="appname"
             type="text"
             labelText="Application Name"
-            size={'lg'}
+            defaultValue={appname}
+            onChange={onChange}
             placeholder="Application Name"
           />
-          <Button
-            type="submit"
-            kind="primary"
-            onSubmit={handleCreateApplication}>
+          <Button type="submit" kind="primary">
             Create Application
           </Button>
         </Stack>
@@ -37,4 +61,5 @@ const ApplicationCreator = () => {
     </div>
   );
 };
+
 export default ApplicationCreator;
