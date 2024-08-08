@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search } from '@carbon/icons-react';
+import { Search, Add } from '@carbon/icons-react';
 import {
   Grid,
   Column,
@@ -66,7 +66,7 @@ const ApplicationCards = () => {
                 alignItems: 'center',
               }}>
               <Link style={{ fontSize: 48 }} href="/#/appcreator">
-                +
+                <Add size={48} />
               </Link>
             </div>
           </Tile>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Stack, TextInput, Button } from '@carbon/react';
 import { useHistory } from 'react-router-dom';
+import config from '../../config/config';
 
 const ApplicationCreator = () => {
   const [appname, setAppname] = useState('');
@@ -8,23 +9,20 @@ const ApplicationCreator = () => {
   const history = useHistory();
   const navigateTo = () => history.push('/');
 
-  const handleCreateApplication = () => {
-    fetch('http://localhost:3001/application/createapp', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        appname: appname,
-      }),
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Success:', data);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
+  const handleCreateApplication = async () => {
+    const response = await fetch(
+      config.developer_center_server + '/application/createapp',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          appname: appname,
+        }),
+      }
+    );
+    console.log(await response.json());
 
     navigateTo();
 
