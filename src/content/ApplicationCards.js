@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, Add } from '@carbon/icons-react';
+import { Add } from '@carbon/icons-react';
 import {
   Grid,
   Column,
@@ -22,7 +22,7 @@ const ApplicationCards = () => {
               <ListItem>Inventory</ListItem>
               <ListItem>...</ListItem>
             </UnorderedList>
-            <Link style={{ marginLeft: '12px' }} href="/#/pagedesigner">
+            <Link style={{ marginLeft: '12px' }} href="/#/application/">
               Edit
             </Link>
           </Tile>
@@ -36,7 +36,7 @@ const ApplicationCards = () => {
               <ListItem>...</ListItem>
               <ListItem>...</ListItem>
             </UnorderedList>
-            <Link style={{ marginLeft: '12px' }} href="/#/pagedesigner">
+            <Link style={{ marginLeft: '12px' }} href="/#/application/">
               Edit
             </Link>
           </Tile>
@@ -50,7 +50,7 @@ const ApplicationCards = () => {
               <ListItem>...</ListItem>
               <ListItem>...</ListItem>
             </UnorderedList>
-            <Link style={{ marginLeft: '12px' }} href="/#/appdesigner">
+            <Link style={{ marginLeft: '12px' }} href="/#/application/">
               Edit
             </Link>
           </Tile>

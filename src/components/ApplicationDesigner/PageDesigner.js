@@ -10,7 +10,7 @@ import FormDesigner from './FormDesigner';
 
 const PageDesigner = () => {
   return (
-    <TabsVertical>
+    <TabsVertical style={{ posithion: 'relative fixed', height: '100%' }}>
       <TabListVertical aria-label="List of tabs" scrollIntoView={true}>
         <Tab>Start Center</Tab>
         <Tab>Workorder List</Tab>

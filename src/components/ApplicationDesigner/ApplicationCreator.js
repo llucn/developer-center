@@ -7,7 +7,7 @@ const ApplicationCreator = () => {
   const [appname, setAppname] = useState('');
 
   const history = useHistory();
-  const navigateTo = () => history.push('/');
+  const navigateTo = () => history.push('/#/application/');
 
   const handleCreateApplication = async () => {
     const response = await fetch(
@@ -25,8 +25,6 @@ const ApplicationCreator = () => {
     console.log(await response.json());
 
     navigateTo();
-
-    return false;
   };
 
   const onChange = e => {
@@ -41,7 +39,7 @@ const ApplicationCreator = () => {
         width: '50%',
         padding: '10px',
       }}>
-      <Form labelText="Create Application" onSubmit={handleCreateApplication}>
+      <Form labelText="Create Application">
         <Stack gap={6}>
           <TextInput
             id="appname"
@@ -51,7 +49,10 @@ const ApplicationCreator = () => {
             onChange={onChange}
             placeholder="Application Name"
           />
-          <Button type="submit" kind="primary">
+          <Button
+            type="button"
+            kind="primary"
+            onClick={handleCreateApplication}>
             Create Application
           </Button>
         </Stack>
