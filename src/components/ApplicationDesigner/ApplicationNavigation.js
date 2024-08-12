@@ -29,15 +29,17 @@ const ApplicationNavigation = () => {
           <HeaderMenuItem href="/#/">Home</HeaderMenuItem>
         </HeaderSideNavItems>
 
-        <SideNavLink
-          href="/#/application/components"
+        <SideNavLink href="/#/application/components">Components</SideNavLink>
+
+        <SideNavMenu
+          title="Modules"
+          defaultExpanded={true}
           isActive={true}
           aria-current="page">
-          Components
-        </SideNavLink>
-
-        <SideNavMenu title="Modules" defaultExpanded={true}>
-          <SideNavMenuItem href="/#/application/pagedesigner">
+          <SideNavMenuItem
+            href="/#/application/pagedesigner"
+            isActive={true}
+            aria-current="page">
             Workorder
           </SideNavMenuItem>
           <SideNavMenuItem href="/#/application/pagedesigner">

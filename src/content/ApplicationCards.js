@@ -10,60 +10,45 @@ import {
 } from '@carbon/react';
 
 const ApplicationCards = () => {
-  return (
-    <div>
+  const [apps, setApps] = useState([]);
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('http://localhost:3001/application/')
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+
+        setApps(data);
+
+        // apps.forEach(app => {
+        //   console.log(app);
+        // })
+        setIsLoading(false);
+      });
+  }, []);
+
+  function Cards(props) {
+    const appCards = apps.map(app => (
+      <Column lg={3} md={2} sm={1} className="card-page__r1">
+        <Tile style={{ height: '240px', width: '240px' }}>
+          <b>{app.name}</b>
+          <p>{app.description}</p>
+          <Link
+            style={{ marginLeft: '12px' }}
+            href="/#/application/"
+            target="_blank">
+            Edit
+          </Link>
+        </Tile>
+      </Column>
+    ));
+
+    return (
       <Grid className="card-page">
-        <Column lg={3} md={2} sm={1} className="card-page__r1">
-          <Tile style={{ height: '240px', width: '240px' }}>
-            <b>Delta Work Force for MAS</b>
-            <UnorderedList>
-              <ListItem>Work Order</ListItem>
-              <ListItem>Asset</ListItem>
-              <ListItem>Inventory</ListItem>
-              <ListItem>...</ListItem>
-            </UnorderedList>
-            <Link
-              style={{ marginLeft: '12px' }}
-              href="/#/application/"
-              target="_blank">
-              Edit
-            </Link>
-          </Tile>
-        </Column>
-        <Column lg={3} md={2} sm={1} className="card-page__r1">
-          <Tile style={{ height: '240px', width: '240px' }}>
-            <b>Delta Work Force For Tririga</b>
-            <UnorderedList>
-              <ListItem>...</ListItem>
-              <ListItem>...</ListItem>
-              <ListItem>...</ListItem>
-              <ListItem>...</ListItem>
-            </UnorderedList>
-            <Link
-              style={{ marginLeft: '12px' }}
-              href="/#/application/"
-              target="_blank">
-              Edit
-            </Link>
-          </Tile>
-        </Column>
-        <Column lg={3} md={2} sm={1} className="card-page__r1">
-          <Tile style={{ height: '240px', width: '240px' }}>
-            <b>Delta Work Force For SAP</b>
-            <UnorderedList>
-              <ListItem>...</ListItem>
-              <ListItem>...</ListItem>
-              <ListItem>...</ListItem>
-              <ListItem>...</ListItem>
-            </UnorderedList>
-            <Link
-              style={{ marginLeft: '12px' }}
-              href="/#/application/"
-              target="_blank">
-              Edit
-            </Link>
-          </Tile>
-        </Column>
+        {appCards}
+
         <Column lg={3} md={2} sm={1} className="card-page__r1">
           <Tile style={{ height: '240px', width: '240px' }}>
             <div
@@ -81,7 +66,10 @@ const ApplicationCards = () => {
           </Tile>
         </Column>
       </Grid>
-    </div>
+    );
+  }
+  return (
+    <div>{isLoading ? <div>Loading...</div> : <Cards items={apps} />}</div>
   );
 };
 export default ApplicationCards;
